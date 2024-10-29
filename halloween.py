@@ -103,7 +103,7 @@ def fill():
             count +=1
             
 def flame(bg = (yellow), fg = (255,69,0) , delay = 0.1, fire = 4):
-    #Creates a flickering effect, however I don't use it
+    #Creates a flickering effect that resembles flames
     for i in  range(fire):
               won = random.randint(0,29)
               too = random.randint(0,29)
@@ -134,5 +134,6 @@ while True:
     fade_out(rgb)
     fade_in(rgb)
     sparkle()
+    flame()
    
     
