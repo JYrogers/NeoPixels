@@ -22,18 +22,9 @@ purple = ((75,0,150))
 
 
 
-def chase(bg = orange, delay =0.1):
-    count = 0
-    for i in range(np.n):
-        np.fill(bg)
-    for i in range(np.n):
-        if(i == i-1) % 3 ==1:
-            np[i] = (0,0,0)
-            time.sleep(delay)
-            np.show()
-            count  +=2
 color_list = [red, purple, orange, yellow]
 def fade_out(color, speed =0.01, ratio = 50):
+    #Fades out with a certain color
     red_ratio = color[0] / ratio
     red_orig = color[0]
     blue_ratio = color[1] / ratio
@@ -50,6 +41,7 @@ def fade_out(color, speed =0.01, ratio = 50):
        
        
 def fade_in(colors, speed = 0.01, ratio = 50):
+    #Fades in with a certain color
     red_ratio = colors[0] / ratio
     red_orig = colors[0]
     blue_ratio = colors[1] / ratio
@@ -67,8 +59,9 @@ def fade_in(colors, speed = 0.01, ratio = 50):
 
 
 white = ((255,255,255))
-color_list = [red, purple, orange, yellow]
-def sparkle(bg = random.choice(color_list), fg = black, delay = 0.5, spark = 5):
+color_list = [purple, orange, yellow]
+def sparkle(bg = random.choice(color_list), fg = red, delay = 0.5, spark = 5):
+    #Makes individual neopixels to sparkle
     for i in  range(spark):
               won = random.randint(0,29)
               too = random.randint(0,29)
@@ -82,10 +75,11 @@ def sparkle(bg = random.choice(color_list), fg = black, delay = 0.5, spark = 5):
               np[hii] = fg
               np[who] = fg
               np.show()
-              time.sleep(0.2)
+              time.sleep(0.3)
              
              
 def lightining():
+    #Creates a lightning effet by causing it to flicker white
     doo = random.randint(1,50)
     for i in range(doo):
         np.fill(white)
@@ -97,6 +91,7 @@ def lightining():
         time.sleep(doo)        
 
 def fill():
+#This fills up the entire strip with a random color
     count = 0
     for i in range(np.n):
         np.fill(black)
@@ -106,6 +101,23 @@ def fill():
             np.show()
             time.sleep(0.1)
             count +=1
+            
+def flame(bg = (yellow), fg = (255,69,0) , delay = 0.1, fire = 4):
+    #Creates a flickering effect, however I don't use it
+    for i in  range(fire):
+              won = random.randint(0,29)
+              too = random.randint(0,29)
+              tree = random.randint(0,29)
+              forr = random.randint(0,29)
+              np.fill(bg)
+              np[won] = fg
+              np[too] = fg
+              np[tree] = fg
+              np[forr] = (255,165,0)
+              np.show()
+              time.sleep(delay)
+
+
 
 
            
@@ -122,4 +134,5 @@ while True:
     fade_out(rgb)
     fade_in(rgb)
     sparkle()
+   
     
