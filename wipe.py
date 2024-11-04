@@ -29,21 +29,21 @@ def wipe():
         if (i == i-2) % 3 ==0:
             np[i] = (orange)
             np.show()
-            time.sleep(0.01)
+            time.sleep(0.1)
             
 def pattern():
     for i in range(np.n - 1,-1,-1):
         if (i == i-2) % 3 ==0:
             np[i] = color_list[i%len(color_list)]
             np.show()
-            time.sleep(0.01)
+            time.sleep(0.1)
     
 def reversewipe():
     for i in range(np.n - 1 , -1 , -1):
         if (i == i-2) % 3 ==0:
             np[i] = (red)
             np.show()
-            time.sleep(0.01)
+            time.sleep(0.1)
             
             
 def patternback():
@@ -51,7 +51,7 @@ def patternback():
         if (i == i-2) % 3 ==0:
             np[i] = (random.choice(color_list))
             np.show()
-            time.sleep(0.01)
+            time.sleep(0.1)
     
     
             
